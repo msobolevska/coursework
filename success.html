@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="style.css" rel="stylesheet">
+    <title>Success</title>
+
+    <script>
+        window.onload = function () {
+            var url = document.location.href,
+                params = url.split('?')[1].split('&'),
+                data = {}, tmp;
+            for (var i = 0, l = params.length; i < l; i++) {
+                 tmp = params[i].split('=');
+                 data[tmp[0]] = tmp[1];
+            }
+            document.getElementById('exampleFormControlTextarea1').innerHTML = 
+            "Шановний клієнт,\n\n" +
+            "Надсилаємо заяву щодо підтвердження можливості кредитування длявас. Ми підтримуємо цей запит і готові розглянути можливість виділення кредитних коштів .\n" +
+            "Сума кредиту: " + data.credit_amount +"\n" +
+            "Термін кредиту: " + data.credit_period +" місяців\n" +
+            "Ми провели необхідний аналіз фінансової стійкості клієнта та вважаємо, що надання кредиту є обґрунтованим та відповідає нашим кредитним стандартам.\n" +
+            "Просимо надати підтвердження цієї заявки та надати нам додаткову інформацію або документи, які можуть знадобитися для подальшого розгляду цього питання.\n" +
+            "Дякуємо за використання нашої системи.\n\n" +
+            "З повагою,\n" +
+            "керівництво банку";
+        }
+    </script>
+    
+</head>
+<body>
+    <section class="vh-100">
+        <div class="container py-5 h-100">
+          <div class="row d-flex align-items-center justify-content-center h-100">
+            <div class="col-md-8 col-lg-7 col-xl-6">
+                <img src="money_bag.svg" class="img-fluid" alt="Phone image">
+            </div>
+            <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+                <div class="form-outline mb-4">
+                    <h2>Вітаємо, вам схвалено кредит</h2>
+                </div>
+                <div class="form-outline mb-4">
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" readonly></textarea>
+                    <label for="exampleFormControlTextarea1">Договір</label>
+                </div>
+                <a class="w-100 btn btn-dark btn-lg btn-block" style="background-color: #055e05"
+                    role="button"> <i class="fab fa-facebook-f me-2"></i>Прийняти</a>
+            </div>
+          </div>
+        </div>
+    </section>
+</body>
+</html>
